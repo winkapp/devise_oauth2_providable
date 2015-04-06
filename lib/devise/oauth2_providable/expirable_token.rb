@@ -12,7 +12,7 @@ module Devise
           self.default_lifetime = Rails.application.config.devise_oauth2_providable[config_name]
 
           belongs_to :user
-          belongs_to :client
+          belongs_to :client, class_name: Devise::Oauth2Providable.client_class.to_s
 
           attr_accessible :user, :client
 
